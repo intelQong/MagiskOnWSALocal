@@ -1,19 +1,6 @@
 # Magisk on WSA (with Google Apps)
 
 :warning: For fork developers: Please don't build using GitHub Actions, as GitHub will count your forked GitHub Actions usage against this upstream repository, which may cause this upstream repository gets disabled by GitHub staff like [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA) because of numerous forks building GitHub Actions, and counting the forks' Action usage against this upstream repository.
-
-## Support for generating from these systems
-
-- Linux (x86_64 or arm64)
-
-  The following dependencies are required:
-
-  | DistrOS             |                                                         |            |              |                    |               |              |
-  |:-------------------:|---------------------------------------------------------|------------|--------------|--------------------|---------------|--------------|
-  | Debian              | `lzip patchelf e2fsprogs python3 aria2 attr unzip sudo` | `whiptail` | `qemu-utils` | `python3-venv`     | `python3-pip` | `p7zip-full` |
-  | openSUSE Tumbleweed | Same as above                                           | `dialog`   | `qemu-tools` | `python3-venvctrl` | Same as above                |
-  | Arch                | Same as Debian                                          | `libnewt`  | `qemu-img`   |  Same as Debian    | `python-pip`  | `p7zip`      |
-
   The python3 library `requests` is used.
 
   Python version ≥ **3.7.2**.
@@ -52,25 +39,27 @@
 
 ## Text Guide
 
-1. Star (if you like).
-2. Clone the repo to local:
-
+1. run `wsl --install` in windows powershell.  
+2. Turn on `Virtual Machine Platform` from *Turn Windows Features On And Off*
+3. Install `Ubuntu` from microsoft store.
+4. Reboot
+5. Open Ubuntu from Start Menu and run
    ```bash
    git clone https://github.com/intelQong/MagiskOnWSALocal --depth 1
    ```
 
-3. Run `cd MagiskOnWSALocal`.
-4. Run `./scripts/run.sh`.
-5. Select the WSA version and its architecture (mostly x64).
-6. Select the version of Magisk.
-7. Choose which brand of GApps you want to install:
+6. Run `cd MagiskOnWSALocal`.
+7. Run `./scripts/run.sh`.
+8. Select the WSA version and its architecture (mostly x64).
+9. Select the version of Magisk.
+10. Choose which brand of GApps you want to install:
    - MindTheGapps
 
      There is no other variant we can choose.
-8. Select the root solution (none means no root).
-9. If you are running the script for the first time, it will take some time to complete. After the script completes, two new folders named `output` and `download` will be generated in the `MagiskOnWSALocal` folder. Go to the `output` folder. While running the `./run.sh` script in the step 3, if you selected `Yes` for `Do you want to compress the output?` then in `output` folder you will see a compressed file called `WSA-with-magisk-stable-MindTheGapps_2207.40000.8.0_x64_Release-Nightly`or else there will be folder with the `WSA-with-magisk-stable-MindTheGapps_2207.40000.8.0_x64_Release-Nightly`. If there is a folder open it and skip to step 10. NOTE: The name of compressed file or the folder generated in the `output` folder may be different for you. It will be dependent on the choices made when executing `./run.sh`.
-10. Extract the compressed file and open the folder created after the extraction of the file.
-11. Here look for file `Run.bat` and run it.
+11. Select the root solution (none means no root).
+12. If you are running the script for the first time, it will take some time to complete. After the script completes, two new folders named `output` and `download` will be generated in the `MagiskOnWSALocal` folder. Go to the `output` folder. While running the `./run.sh` script in the step 3, if you selected `Yes` for `Do you want to compress the output?` then in `output` folder you will see a compressed file called `WSA-with-magisk-stable-MindTheGapps_2207.40000.8.0_x64_Release-Nightly`or else there will be folder with the `WSA-with-magisk-stable-MindTheGapps_2207.40000.8.0_x64_Release-Nightly`. If there is a folder open it and skip to step 10. NOTE: The name of compressed file or the folder generated in the `output` folder may be different for you. It will be dependent on the choices made when executing `./run.sh`.
+13. Extract the compressed file and open the folder created after the extraction of the file.
+14. Here look for file `Run.bat` and run it.
     - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while **preserving all user data** and install the new one, so don't worry about your data.
     - If you have an official WSA installation, you should uninstall it first. (In case you want to preserve your data, you can backup `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` before uninstallation and restore it after installation.)
     - If the popup windows disappear **without asking administrative permission** and WSA is not installed successfully, you should manually run `Install.ps1` as Administrator:
@@ -79,7 +68,7 @@
         3. Input `PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1` and press `Enter`.
         4. The script will run and WSA will be installed.
         5. If this workaround does not work, your PC is not supported for WSA.
-12. Magisk/Play Store will be launched. Enjoy by installing LSPosed-Zygisk with Zygisk enabled or Riru and LSPosed-Riru.
+15. Magisk/Play Store will be launched. Enjoy by installing LSPosed-Zygisk with Zygisk enabled or Riru and LSPosed-Riru.
 
 ---
 
