@@ -170,4 +170,5 @@ _The repository is provided as a utility._
 _Android is a trademark of Google LLC._
 
 _Windows is a trademark of Microsoft Corporation._
+
 _Linux® is a registered trademark of Linus Torvalds._
