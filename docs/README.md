@@ -47,7 +47,6 @@
    ```bash
    git clone https://github.com/intelQong/MagiskOnWSALocal --depth 1
    ```
-
 6. Run `cd MagiskOnWSALocal`.
 7. Run `./scripts/run.sh`.
 8. Select the WSA version and its architecture (mostly x64).
